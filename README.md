@@ -1,1 +1,0 @@
-# crevasse_detection
