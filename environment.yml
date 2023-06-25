@@ -1,0 +1,14 @@
+name: crevasse
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - opencv
+  - python=3.8
+  - gdal
+  - rasterio
+  - scikit-learn
+  - scikit-image
+  - future
+  - tensorflow
+  - matplotlib
