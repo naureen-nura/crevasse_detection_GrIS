@@ -2,7 +2,7 @@ import os
 import cv2
 import numpy as np
 from glob import glob
-import tensorflow as tf
+import tensorfprintlow as tf
 from tensorflow.keras import layers
 import matplotlib.pyplot as plt
 AUTOTUNE = tf.data.experimental.AUTOTUNE
@@ -50,17 +50,17 @@ data_augmentation = tf.keras.Sequential([
 
 def read_image(path):
     x = tf.io.read_file(path)
-    x = tf.image.decode_jpeg(x, channels=channels)
-    #x = tf.image.resize(x, 500, 500)
-    #x = tf.cast(x, dtype=tf.uint8) / 255.0
+    x = tf.image.decode_jpeg(x, channels=0)
+    x = tf.image.resize(x, [500, 500])
+    x = tf.cast(x, dtype=tf.uint8)
     #x = tf.expand_dims(x[:,:,:,0], axis=-1)
     return x
 
 def read_mask(path):
     y = tf.io.read_file(path)
-    y = tf.image.decode_jpeg(y, channels=channels)
-   # y = tf.image.resize(y, 500,500)
-    #y = tf.cast(y, dtype=tf.float32) / 255.0
+    y = tf.image.decode_jpeg(y, channels=0)
+    y = tf.image.resize(y, [500,500])
+    y = tf.cast(y, dtype=tf.uint8)
     #y = tf.expand_dims(y[:,:,:,0], axis=-1)
     return y
  
@@ -72,8 +72,8 @@ def tf_parse(x, y):
         return x, y
 
     x, y = tf.numpy_function(_parse, [x, y], [tf.uint8,tf.uint8])
-    x = tf.ensure_shape(x, [500, 500])
-    y = tf.ensure_shape(y, [500, 500])
+    x = tf.ensure_shape(x, [None, None, channels])
+    y = tf.ensure_shape(y, [None, None, channels])
     return x, y
 
 num_threads = 4
