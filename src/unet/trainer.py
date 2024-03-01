@@ -175,4 +175,4 @@ class Trainer:
                            .batch(batch_size=1)
                            )
 def build_log_dir_path(root: Optional[str]= "unet") -> str:
-    return str(Path(root) / datetime.now().strftime("%Y-%m-%dT%H-%M_%S"))
+    return str(Path(root) / datetime.now().strftime("%Y_%m_%dT%H_%M_%S"))

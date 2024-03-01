@@ -4,13 +4,13 @@ channels:
 dependencies:
   - numpy
   - opencv
-  - python=3.8
+  - python=3.9
   - gdal
   - rasterio
   - scikit-learn
   - scikit-image
   - future
-  - tensorflow
+  - tensorflow=2.15
   - matplotlib
   - pydot
   - ipython

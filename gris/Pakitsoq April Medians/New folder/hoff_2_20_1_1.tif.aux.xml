@@ -1,0 +1,11 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">-4.5794819195516</MDI>
+      <MDI key="STATISTICS_MEAN">-12.388360545227</MDI>
+      <MDI key="STATISTICS_MINIMUM">-17.945379892311</MDI>
+      <MDI key="STATISTICS_STDDEV">1.4911035530773</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">86.72</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

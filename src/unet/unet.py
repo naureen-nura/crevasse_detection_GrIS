@@ -212,6 +212,7 @@ def finalize_model(model: Model,
                    dice_coefficient: bool=True,
                    auc: bool=True,
                    mean_iou: bool=True,
+                   #confusion_matrix: bool=True,
                    **opt_kwargs):
     """
     Configures the model for training by setting, loss, optimzer, and tracked metrics
@@ -236,6 +237,9 @@ def finalize_model(model: Model,
 
     if mean_iou:
         metrics += [unet.metrics.mean_iou]
+
+    # if confusion_matrix:
+    #     metrics += [unet.metrics.ConfusionMatrixMetric()]
 
     if dice_coefficient:
         metrics += [unet.metrics.dice_coefficient]
